@@ -1,0 +1,16 @@
+$theme.navigation_style {
+	background-color:	blue;
+}
+
+$theme.folders_style {
+	background-color:	red;
+}
+
+$theme.display_style {
+	background-color:	green;
+}
+
+$theme.folder_item_style {
+	background-color:	green;
+}
+
