@@ -32,8 +32,13 @@ MyApp.mainPage = SC.Page.design({
     			rowHeight:			18,
     			selectionBinding:	'MyApp.foldersController.selection',
     			contentBinding:		'MyApp.foldersController.arrangedObjects',
-    			exampleView:		MyApp.FolderItemView,
-    			contentValueKey:	'name'
+				exampleView: 	SC.LabelView.design(
+					{
+						valueBinding: 	'.content.name',
+					})
+
+    			//exampleView:		MyApp.FolderItemView,    			    			
+    			//contentValueKey:	'name'
     		})    	
     	}),
     
