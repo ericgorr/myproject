@@ -8,11 +8,11 @@ CascadingDatasource.itemDataSource = SC.DataSource.create(
 			itemRecord;
 	
 		if ( query.recordType === CascadingDatasource.Item && query.targetDataSource === 'itemDataSource') 
-		{
-			itemRecord = CascadingDatasource.Item.create({
+		{						
+			CascadingDatasource.store.createRecord( CascadingDatasource.Item, {
 				name:	'the name',
 				ph:		'the phone number'
-			});						
+			});	
 		}
 
 	 	 // Indicate that we took this request.
