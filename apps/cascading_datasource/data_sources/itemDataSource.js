@@ -8,15 +8,17 @@ CascadingDatasource.itemDataSource = SC.DataSource.create(
 			itemRecord;
 	
 		if ( query.recordType === CascadingDatasource.Item && query.targetDataSource === 'itemDataSource') 
-		{						
-			CascadingDatasource.store.createRecord( CascadingDatasource.Item, {
+		{		
+			CascadingDatasource.store.loadRecord( CascadingDatasource.Item, {
 				name:	'the name',
 				ph:		'the phone number'
 			});	
-		}
 
-	 	 // Indicate that we took this request.
-	  	handled = true;
+			var theRecords = CascadingDatasource.store.recordsFor( CascadingDatasource.Item );
+			
+	 	 	// Indicate that we took this request.
+	  		handled = true;
+		}
 		
 		return handled;
 	}

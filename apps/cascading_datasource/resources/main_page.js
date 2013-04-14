@@ -15,12 +15,12 @@ CascadingDatasource.mainPage = SC.Page.design({
     
     	nameView: SC.LabelView.design({
       		layout: 		{ width: 200, height: 18 },
-      		valueBinding: 	SC.Binding.oneWay('CascadingDatasource.itemController.name')
+      		valueBinding: 	SC.Binding.oneWay( 'CascadingDatasource.itemController.name' )
     	}),
 
     	phView: SC.LabelView.design({
       		layout: 		{ top: 20, width: 200, height: 18 },
-      		valueBinding: 	SC.Binding.oneWay('CascadingDatasource.itemController.ph')
+      		valueBinding: 	SC.Binding.oneWay( 'CascadingDatasource.itemController.ph' )
     	})
   	})
 });
