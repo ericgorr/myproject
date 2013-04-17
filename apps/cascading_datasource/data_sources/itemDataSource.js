@@ -9,12 +9,12 @@ CascadingDatasource.itemDataSource = SC.DataSource.create(
 	
 		if ( query.recordType === CascadingDatasource.Item && query.targetDataSource === 'itemDataSource') 
 		{		
-			CascadingDatasource.store.loadRecord( CascadingDatasource.Item, {
-				name:	'the name',
+			var storeKey = CascadingDatasource.store.loadRecord( CascadingDatasource.Item, {
+				name:	'the name aaa',
 				ph:		'the phone number'
 			});	
 
-			var theRecords = CascadingDatasource.store.recordsFor( CascadingDatasource.Item );
+			store.loadQueryResults( query, [storeKey] );
 			
 	 	 	// Indicate that we took this request.
 	  		handled = true;
