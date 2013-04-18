@@ -41,7 +41,7 @@ ScTechnique.statechart = SC.Statechart.create({
 				data.forEach(function(rec) {
 					var id = rec.folder;
 					
-					MyApp.store.pushRetrieve(MyApp.myModel,id,rec);
+					ScTechnique.store.pushRetrieve(MyApp.myModel,id,rec);
 				});
 				
 				this.resumeGotoState();
