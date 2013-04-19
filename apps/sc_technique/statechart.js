@@ -1,5 +1,7 @@
 ScTechnique.statechart = SC.Statechart.create({
 
+	trace: YES,
+	
 	initialState: 'rootState',
 
 	rootState: SC.State.design({
@@ -17,7 +19,8 @@ ScTechnique.statechart = SC.Statechart.create({
 			
 			script: null,
 
-			load: function() {
+			load: function() 
+			{
 				//
 				// inject script tag
 				//
@@ -29,14 +32,19 @@ ScTechnique.statechart = SC.Statechart.create({
 				script.src	= sc_static( 'helper.jsonp' );
 
 				this.script = script;
-								
-				document.appendChild(script);			
+				
+				var bodyElement = (document.getElementsByTagName( 'body' ))[0];
+							
+				bodyElement.appendChild( script );			
 			},
 			
-			loadData: function(data) {
+			loadData: function( data ) 
+			{
 				if ( !data ) throw "False data";
 				
-				document.removeChild( this.script );
+				var bodyElement = (document.getElementsByTagName( 'body' ))[0];
+				
+				bodyElement.removeChild( this.script );
 				
 				data.forEach( function(rec) {
 					var id = rec.folder;
@@ -45,16 +53,13 @@ ScTechnique.statechart = SC.Statechart.create({
 				});
 				
 				this.resumeGotoState();
-				
-				document.removeChild( this.script );
-				
+								
 				this.script = null; // prevent leak
 				
-				this.gotoState('MAIN');
+				this.gotoState( 'MAIN' );
 			}
-		})
+		}),
+		
+		MAIN: SC.State.plugin( 'ScTechnique.ReadyState' ),
 	}),
-	
-	MAIN: SC.State.plugin( 'ScTechnique.ReadyState' )
-	
 });

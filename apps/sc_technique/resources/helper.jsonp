@@ -1,1 +1,1 @@
-ScTechnique.statechart.sendEvent( 'loadData', [{ folder: "name", files: ["filename1.js"] }] );
+ScTechnique.statechart.sendEvent( 'loadData', [{ folder: "my really cool folder", files: ["filename1.js"] }] );
