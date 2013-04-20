@@ -2,13 +2,13 @@ ScTechnique.ReadyState = SC.State.extend({
   
  	enterState: function() 
   	{
-  		//ScTechnique.itemArrayController.set( 'content', ScTechnique.store.find( SC.Query.local( ScTechnique.Item, { orderBy: 'timestamp DESC' } ) ) );
+  		ScTechnique.itemArrayController.set( 'content', ScTechnique.store.find( SC.Query.local( ScTechnique.Item, { orderBy: 'timestamp DESC' } ) ) );
 
-		ScTechnique.itemController.set( 'content', ScTechnique.Item.create( { folder: "another folder", files: ["filename2.js"] } ) );
+		//ScTechnique.itemController.set( 'content', ScTechnique.Item.create( { folder: "another folder", files: ["filename2.js"] } ) );
 		
 		//ScTechnique.itemArrayController.set( 'content', [{ folder: "my really cool folder", files: ["filename1.js"] }] );
 		
-		//ScTechnique.itemController.contentBinding.connect();
+		ScTechnique.itemArrayController.selectObject( ScTechnique.itemArrayController.firstSelectableObject() );
 		
     	ScTechnique.getPath('mainPage.mainPane').append();
   	},
