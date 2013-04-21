@@ -50,7 +50,7 @@ var htmlBuildScripts = [
 var sc_technique = g.App.create({
 
 	name: 			'sc_technique',
-	theme: 			'sc-theme',
+	theme: 			'ace',
 	htmlBody: 		stdHtmlBody,
 	htmlHead: 		'<title>SC Technique</title>',
 	htmlScripts: 	shouldBuild? htmlBuildScripts: "",
@@ -58,8 +58,8 @@ var sc_technique = g.App.create({
 	hasSC: 			true,
 
 	frameworks: [
-		{ path: 'frameworks/sproutcore/themes/empty_theme'},
-		{ path: 'frameworks/sproutcore/themes/ace'},
+		//{ path: 'frameworks/sproutcore/themes/empty_theme'},
+		//{ path: 'frameworks/sproutcore/themes/ace'},
 		{ path: 'apps/sc_technique'}
 	]
 
