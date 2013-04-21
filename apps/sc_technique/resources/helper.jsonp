@@ -1,1 +1,2 @@
-ScTechnique.statechart.sendEvent( 'loadData', [{ folder: "helper folder", files: ["filename1.js"] }] );
+ScTechnique.statechart.sendEvent( 'loadData', [	{ folder: "helper folder", files: [ { thename: "filename1.1.jsonp" }, { thename: "filename1.2.jsonp" } ] }, 
+												{ folder: "helper folder2", files: [ { thename: "filename2.1.jsonp" }, { thename: "filename2.2.jsonp" } ] }] );

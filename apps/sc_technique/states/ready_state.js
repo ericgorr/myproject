@@ -3,10 +3,6 @@ ScTechnique.ReadyState = SC.State.extend({
  	enterState: function() 
   	{
   		ScTechnique.itemArrayController.set( 'content', ScTechnique.store.find( SC.Query.local( ScTechnique.Item, { orderBy: 'timestamp DESC' } ) ) );
-
-		//ScTechnique.itemController.set( 'content', ScTechnique.Item.create( { folder: "another folder", files: ["filename2.js"] } ) );
-		
-		//ScTechnique.itemArrayController.set( 'content', [{ folder: "my really cool folder", files: ["filename1.js"] }] );
 		
 		ScTechnique.itemArrayController.selectObject( ScTechnique.itemArrayController.firstSelectableObject() );
 		
@@ -18,11 +14,47 @@ ScTechnique.ReadyState = SC.State.extend({
     	ScTechnique.getPath('mainPage.mainPane').remove();
   	},
 
-  	actionButtonPressed: function() 
+  	actionFolderSelected: function() 
   	{
-    	console.log( 'action button pressed' );
+    	console.log( 'actionFolderSelected pressed' );
     	console.log( ScTechnique.itemController.get( 'folder' ) );
-  	}
+  	},
 
+  	actionFileSelected: function() 
+  	{
+    	console.log( 'actionFileSelected pressed' );
+    	
+    	var filenamePath 		= sc_static( 'helper.jsonp' );
+    	var filenameComponents	= filenamePath.split( '/' );
+    	var nComponents			= filenameComponents.length;
+    	
+    	filenameComponents[ nComponents - 1 ] = ScTechnique.folderController.get( 'thename' );
+    	
+    	filenamePath = filenameComponents.join( '/' );
+    	    	    	    	
+		var script = document.createElement('script');						
+		
+		script.type = 'text/javascript';
+		script.src	= filenamePath;
+
+		this.script = script;
+		
+		var bodyElement = (document.getElementsByTagName( 'body' ))[0];
+					
+		bodyElement.appendChild( script );			
+  	},
+	
+	loadFile: function( data ) 
+	{
+		if ( !data ) throw "False data";
+		
+		var bodyElement = (document.getElementsByTagName( 'body' ))[0];
+		
+		bodyElement.removeChild( this.script );
+								
+		this.script = null; // prevent leak
+		
+		ScTechnique.set( 'fileContent', data.fileContent );
+	}
 });
 
