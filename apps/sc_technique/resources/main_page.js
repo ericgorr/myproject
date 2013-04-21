@@ -8,10 +8,10 @@ sc_require( 'views/infoView.js' );
 sc_require( 'views/folderDisplayView.js' );
 
 // This page describes the main user interface for your application.  
-ScTechnique.mainPage = SC.Page.design(
-{
-  	mainPane: SC.MainPane.design(
-  	{
+ScTechnique.mainPage = SC.Page.design({
+
+  	mainPane: SC.MainPane.design({
+  	
     	childViews: 	[ 'navigation', 'display' ],
     
     	navigation:		SC.View.design({    	
@@ -25,6 +25,7 @@ ScTechnique.mainPage = SC.Page.design(
     		}),
     	
     		folders:	SC.ListView.design({
+    
     			layout:				{ top: 24 },
     			classNames:			[ 'folders_style' ],
     			rowHeight:			18,
@@ -33,25 +34,33 @@ ScTechnique.mainPage = SC.Page.design(
     			action:				'actionFolderSelected',
     			actOnSelect:		true,
     			
-				exampleView: 	SC.LabelView.design(
-								{
+				exampleView: 	SC.LabelView.design({
+				
 									valueBinding: 	'.content.folder',
+				
 								})
     		})    	
     	}),
     
+    	/*
+    	display: SC.LabelView.design({
+    		layout: 	{ left: 300, height: 24, width: 300 },
+    		value:		'hello'
+    	})
+    	*/
+    	
     	display:	SC.ContainerView.design({
     		layout:		{ left: 300 },
     		classNames:	[ 'display_style' ],
     		
-    		nowShowingBinding:	SC.Binding.oneWay( 'ScTechnique.displayView' ).transform( function( displayView )
-    		{
-    			return displayView;
-    		}),
-    		
+//     		nowShowingBinding:	SC.Binding.oneWay( 'ScTechnique.displayView' ).transform( function( displayView ) {
+//     			return displayView;
+//     		}),
+
+			nowShowing:	'infoView',
+			
     		infoView:			ScTechnique.InfoView,
     		folderDisplayView:	ScTechnique.FolderDisplayView
     	})
-  	  
   	})
 });
