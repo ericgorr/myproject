@@ -1,0 +1,14 @@
+{
+  "name"          : "myproject",
+  "description"   : "Proof of Concept",
+  "repository"    : { "type" : "git",
+                      "url"  : "https://github.com/ericgorr/myproject.git" },
+  "keywords"      : ["node.js", "sproutcore"],
+  "author"        : "Eric Gorr <ericgorr@gmail.com",
+  "contributors"  : ["Eric Gorr"],
+  "dependencies"  : {
+    "garcon": "git://github.com/sproutcore/build-tools.git"
+  },
+  "version"       : "0.0.1",
+  "engines"       : {"node": "0.8.x"}
+}
