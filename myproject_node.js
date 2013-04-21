@@ -15,7 +15,7 @@ var server = g.Server.create({
 
 	proxies: 	[{ 
 	
-		prefix: 		'/', // couchdb
+		prefix: 		'/',
 		host: 			'localhost',
 		port: 			5984,
 		proxyPrefix: 	'/'
@@ -56,7 +56,8 @@ var sc_technique = g.App.create({
 	htmlScripts: 	shouldBuild? htmlBuildScripts: "",
 	urlPrefix: 		shouldBuild? '': '/',
 	hasSC: 			true,
-
+	configSC: 		{},
+	
 	frameworks: [
 		//{ path: 'frameworks/sproutcore/themes/empty_theme'},
 		//{ path: 'frameworks/sproutcore/themes/ace'},
