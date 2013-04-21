@@ -53,11 +53,11 @@ ScTechnique.mainPage = SC.Page.design({
     		layout:		{ left: 300 },
     		classNames:	[ 'display_style' ],
     		
-//     		nowShowingBinding:	SC.Binding.oneWay( 'ScTechnique.displayView' ).transform( function( displayView ) {
-//     			return displayView;
-//     		}),
+    		nowShowingBinding:	SC.Binding.oneWay( 'ScTechnique.displayView' ).transform( function( displayView ) {
+    			return displayView;
+    		}),
 
-			nowShowing:	'infoView',
+			//nowShowing:	'infoView',
 			
     		infoView:			ScTechnique.InfoView,
     		folderDisplayView:	ScTechnique.FolderDisplayView
