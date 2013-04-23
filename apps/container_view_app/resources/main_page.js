@@ -4,7 +4,10 @@
 // ==========================================================================
 /*globals ContainerViewApp */
 
+sc_require( 'views/first_view.js' );
+
 // This page describes the main user interface for your application.  
+
 ContainerViewApp.mainPage = SC.Page.design({
 
   // The main pane is made visible on screen as soon as your app is loaded.
@@ -17,21 +20,23 @@ ContainerViewApp.mainPage = SC.Page.design({
     container:  SC.ContainerView.design({
   
       layout:   { left: 300 },    
-      nowShowing: 'secondview',
-    
-      firstview:    SC.View.extend({
-
-                      childViews: ['firstLabel'],            
-                      firstLabel: SC.LabelView.extend({
-                
-                                    layout: { height: 24, borderLeft: 20 },
-                  
-                                    value:  'some information'
-                      
-                                  })
       
-                    }),
-                    
+      nowShowing: 'firstview',
+    
+      firstview:    ContainerViewApp.FirstView,
+//       firstview:    SC.View.extend({
+// 
+//                       childViews: ['firstLabel'],            
+//                       firstLabel: SC.LabelView.extend({
+//                 
+//                                     layout: { height: 24, borderLeft: 20 },
+//                   
+//                                     value:  'some information'
+//                       
+//                                   })
+//       
+//                     }),                 
+                          
       secondview:    SC.View.extend({
 
                       childViews: ['firstLabel'],            
