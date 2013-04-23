@@ -67,10 +67,29 @@ var sc_technique = g.App.create({
 });
 
 
+var container_view_app = g.App.create({
+
+	name: 			'container_view_app',
+	theme: 			'ace',
+	htmlBody: 		stdHtmlBody,
+	htmlHead: 		'<title>Container View App</title>',
+	htmlScripts: 	shouldBuild? htmlBuildScripts: "",
+	urlPrefix: 		shouldBuild? '': '/',
+	hasSC: 			true,
+	configSC: 		{},
+	
+	frameworks: [
+		{ path: 'apps/container_view_app'}
+	]
+
+});
+
+
  
 if ( !shouldBuild ) {
 
 	server.addApp(sc_technique);
+	server.addApp(container_view_app);
 	server.run();
 
 }
