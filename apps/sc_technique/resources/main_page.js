@@ -4,8 +4,8 @@
 // ==========================================================================
 /*globals ScTechnique */
 
-sc_require( 'views/infoView.js' );
-sc_require( 'views/folderDisplayView.js' );
+sc_require('views/infoView.js');
+sc_require('views/folderDisplayView.js');
 
 // This page describes the main user interface for your application.  
 ScTechnique.mainPage = SC.Page.design({

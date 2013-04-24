@@ -4,7 +4,7 @@
 // ==========================================================================
 /*globals ContainerViewApp */
 
-sc_require( 'views/first_view' );
+sc_require('views/first_view');
 
 // This page describes the main user interface for your application.  
 
