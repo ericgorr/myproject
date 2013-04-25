@@ -10,11 +10,12 @@ ScTechnique.FolderDisplayView = SC.View.extend({
 		action:				'actionFileSelected',
 		actOnSelect:		true,
 		
-		exampleView: 	SC.LabelView.design(
-						{
-							valueBinding:	SC.Binding.oneWay( '.content' ).transform( function( content )
-							{	
+		exampleView: 	SC.LabelView.design({
+		
+							valueBinding:	SC.Binding.oneWay( '.content' ).transform( function( content ) {	
+
 								return content.thename;
+
 							})
 						})
 	}),
