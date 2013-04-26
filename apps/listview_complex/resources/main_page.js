@@ -15,39 +15,39 @@ ListviewComplex.mainPage = SC.Page.design({
     
     thelist: SC.ListView.design({
     
-        layout:             { width: 300 },
-        rowHeight:          120,
-		selectionBinding:	'ListviewComplex.itemArrayController.selection',
-		contentBinding:		'ListviewComplex.itemArrayController.arrangedObjects',
-		action:             'actionItemSelected',
-		actOnSelect:        true,
+    layout:             { width: 300 },
+    rowHeight:          120,
+    selectionBinding:   'ListviewComplex.itemArrayController.selection',
+    contentBinding:     'ListviewComplex.itemArrayController.arrangedObjects',
+    action:             'actionItemSelected',
+    actOnSelect:        true,
 
-		exampleView: 	SC.View.design({
-		
-		                    childViews:  [ 'propertyA', 'propertyB', 'propertyC' ],
-		                    
-		                    propertyA:  SC.LabelView.design({
-		                                    layout:         { top: 0, left: 0, width: 300, height: 18 },
-		                                    valueBinding:   SC.Binding.oneWay( '.parentView.content.propertyA' )
-		                                }),
+    exampleView:  SC.View.design({
+    
+                        childViews:  [ 'propertyA', 'propertyB', 'propertyC' ],
+                        
+                        propertyA:  SC.LabelView.design({
+                                        layout:         { top: 0, left: 0, width: 300, height: 18 },
+                                        valueBinding:   SC.Binding.oneWay( '.parentView.content.propertyA' )
+                                    }),
 
-		                    propertyB:  SC.LabelView.design({
-		                                    layout:         { top: 18, left: 0, width: 300, height: 18 },
-		                                    valueBinding:   SC.Binding.oneWay( '.parentView.content.propertyB' )
-		                                }),
+                        propertyB:  SC.LabelView.design({
+                                        layout:         { top: 18, left: 0, width: 300, height: 18 },
+                                        valueBinding:   SC.Binding.oneWay( '.parentView.content.propertyB' )
+                                    }),
 
-		                    propertyC:  SC.LabelView.design({
-		                                    layout:         { top: 36, left: 0, width: 300, height: 18 },
-		                                    valueBinding:   SC.Binding.oneWay( '.parentView.content.propertyC' )
-		                                }),
-		                    
-						})
-		
-// 		exampleView: 	SC.LabelView.design({
-// 		
-// 		                    valueBinding:   SC.Binding.oneWay( '.content.propertyA' )
-// 		                    
-// 						})
+                        propertyC:  SC.LabelView.design({
+                                        layout:         { top: 36, left: 0, width: 300, height: 18 },
+                                        valueBinding:   SC.Binding.oneWay( '.parentView.content.propertyC' )
+                                    }),
+                        
+            })
+    
+//    exampleView:  SC.LabelView.design({
+//    
+//                        valueBinding:   SC.Binding.oneWay( '.content.propertyA' )
+//                        
+//            })
     })
   })
 });
