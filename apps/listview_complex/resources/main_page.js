@@ -22,26 +22,7 @@ ListviewComplex.mainPage = SC.Page.design({
     action:             'actionItemSelected',
     actOnSelect:        true,
 
-    exampleView:  SC.View.design({
-    
-                        childViews:  [ 'propertyA', 'propertyB', 'propertyC' ],
-                        
-                        propertyA:  SC.LabelView.design({
-                                        layout:         { top: 0, left: 0, width: 300, height: 18 },
-                                        valueBinding:   SC.Binding.oneWay( '.parentView.content.propertyA' )
-                                    }),
-
-                        propertyB:  SC.LabelView.design({
-                                        layout:         { top: 18, left: 0, width: 300, height: 18 },
-                                        valueBinding:   SC.Binding.oneWay( '.parentView.content.propertyB' )
-                                    }),
-
-                        propertyC:  SC.LabelView.design({
-                                        layout:         { top: 36, left: 0, width: 300, height: 18 },
-                                        valueBinding:   SC.Binding.oneWay( '.parentView.content.propertyC' )
-                                    }),
-                        
-            })
+    exampleView:    ListviewComplex.ListViewCell
     
 //    exampleView:  SC.LabelView.design({
 //    
