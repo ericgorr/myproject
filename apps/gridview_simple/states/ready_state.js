@@ -4,9 +4,9 @@ GridviewSimple.ReadyState = SC.State.extend({
     
     GridviewSimple.gridItems = [];
     
-    GridviewSimple.gridItems.push( "item1" );
-    GridviewSimple.gridItems.push( "item2" );
-    GridviewSimple.gridItems.push( "item3" );
+    GridviewSimple.gridItems.push( GridviewSimple.GridItem.create({ displayString: 'first item' }) );
+    GridviewSimple.gridItems.push( GridviewSimple.GridItem.create({ displayString: 'second item' }) );
+    GridviewSimple.gridItems.push( GridviewSimple.GridItem.create({ displayString: 'third item' }) );
   
     GridviewSimple.getPath('mainPage.mainPane').append();
   },

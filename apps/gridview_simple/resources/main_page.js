@@ -15,10 +15,11 @@ GridviewSimple.mainPage = SC.Page.design({
     
     thegrid: SC.GridView.design({
     
-      layout:         { height: 200 },
-      columnWidth:    120,
-      rowHeight:      58,
-      contentBinding: SC.Binding.oneWay('GridviewSimple.gridItems')
+      layout:           { height: 200 },
+      columnWidth:      120,
+      rowHeight:        58,
+      contentBinding:   SC.Binding.oneWay('GridviewSimple.gridItems'),
+      contentValueKey:  'displayString'
     })
   })
 
