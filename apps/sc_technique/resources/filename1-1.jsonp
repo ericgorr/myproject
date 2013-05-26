@@ -1,1 +1,1 @@
-ScTechnique.statechart.sendEvent( 'loadFile', { file: 'filename1.1.jsonp', fileContent: 'my file content2' } );
+ScTechnique.statechart.sendEvent( 'loadFile', { file: 'filename1.1.jsonp', fileContent: 'my file content1-1' } );
