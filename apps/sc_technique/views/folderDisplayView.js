@@ -13,12 +13,16 @@ ScTechnique.FolderDisplayView = SC.View.extend({
                                                 actOnSelect:		true,
                                                 
                                                 exampleView: 	SC.LabelView.design({
-                                                
+
                                                                     valueBinding:	SC.Binding.oneWay( '.content' ).transform( function( content ) {	
                                         
                                                                         return content.thename;
                                         
-                                                                    })
+                                                                    }),
+                                                                    
+                                                                    contentIndexesInRect:   function(rect) {
+                                                                                              return this.get('allContentIndexes');
+                                                                                            }
                                                                 })
                                             }),
                         }),
