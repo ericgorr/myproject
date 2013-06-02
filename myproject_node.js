@@ -84,12 +84,30 @@ var container_view_app = g.App.create({
 
 });
 
+var printing_template = g.App.create({
+
+	name: 			'printing_template',
+	theme: 			'ace',
+	htmlBody: 		stdHtmlBody,
+	htmlHead: 		'<title>Printing Template</title>',
+	htmlScripts: 	shouldBuild? htmlBuildScripts: "",
+	urlPrefix: 		shouldBuild? '': '/',
+	hasSC: 			true,
+	configSC: 		{},
+	
+	frameworks: [
+		{ path: 'apps/printing_template'}
+	]
+
+});
+
 
  
 if ( !shouldBuild ) {
 
 	server.addApp(sc_technique);
 	server.addApp(container_view_app);
+	server.addApp(printing_template);
 	server.run();
 
 }
